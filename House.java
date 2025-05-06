@@ -72,6 +72,11 @@ public class House extends Building implements HouseRequirements{
     }
   }
 
+  /**
+   * method for a student to move into a house, but they already live in a house
+   * @param s the student who wants to move in
+   * @param oldHouse the house they currently live in    
+   */
   public void moveIn(Student s, House oldHouse){
     if (this.residents.contains(s)){
       throw new RuntimeException(s.getName()+" already lives in " + this.name);
@@ -110,8 +115,7 @@ public class House extends Building implements HouseRequirements{
   /**
    * accessor for if a specific student lives in this house
    * @param s student in question
-   * @return true if they live in this house
-   * @return flase if they do not live in this house
+   * @return true if the student lives in this house
    */
   public boolean isResident(Student s){
     if (this.residents.contains(s)){
@@ -126,7 +130,7 @@ public class House extends Building implements HouseRequirements{
    * Prints the availible public methods for a House
    */
   public void showOptions(){
-    super.showOptions();
+    super.showOptions(); 
     System.out.println(" + isResident()\n + hasDiningRoom()\n + moveIn()\n + moveOut() ");
   }
 

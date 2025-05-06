@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class CampusMap {
 
@@ -34,6 +33,10 @@ public class CampusMap {
         return b;
     }
 
+    /**
+     * toString method for the campus map
+     * @return styleized string of each building in the map and its address
+     */
     public String toString() {
         String mapString = "DIRECTORY of BUILDINGS";
 
@@ -72,9 +75,9 @@ public class CampusMap {
         Building ainsworth = new Building("Ainsworth Gym","102 Lower College Ln, Northampton, MA 01063",4);
         Building burton = new Building("Burton", "46 College Ln, Northampton, MA 01063",4);
 
-        Cafe woodstar = new Cafe("Woodstar", "60 Masonic St, Northampton, MA", 1);
+        Cafe woodstar = new Cafe("Woodstar", "60 Masonic St, Northampton, MA", 1, 700,100, 700, 90);
         Cafe starbucks1 = new Cafe("1800 Main Street", 1); // using the overload method that makes cafes without names starbucks'
-        Cafe campusCenter = new Cafe("The CC","100 Elm St, Northampton, MA 01063", 1);
+        Cafe campusCenter = new Cafe("The CC","100 Elm St, Northampton, MA 01063", 1, 600, 40, 100, 50);
         
         House comstock = new House("Comstock","1 Mandella Rd, Northampton MA",3,true); 
         House hubbard = new House("Hubbard",4,true); //using the overload method that if you don't know the address, its automatically set to "Smith college"

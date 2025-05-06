@@ -48,7 +48,6 @@ public class Library extends Building implements LibraryRequirements{
    * tells whether the library's collection contains a given title
    * @param title 
    * @return true if the title appears as a key in the Libary's collection
-   * @return false otherwise
    */
   public boolean containsTitle(String title){
     if (this.collection.containsKey(title)){
@@ -139,7 +138,6 @@ public class Library extends Building implements LibraryRequirements{
    * returns if a book is availible to checkout
    * @param title
    * @return true if the library has the book in its collection
-   * @return false otherwise
    */
   public boolean isAvailable(String title){
     if (this.collection.get(title)) {
@@ -158,8 +156,9 @@ public class Library extends Building implements LibraryRequirements{
     System.out.printf("----------------------------------------------------------------------%n");
     System.out.printf("| %-42s | %-21s |%n", "Book Title", "Availible to Checkout");
     System.out.printf("----------------------------------------------------------------------%n");
-    for (Map.Entry<String, Boolean> e : collection.entrySet())     
+    for (Map.Entry<String, Boolean> e : collection.entrySet())  {   
       System.out.printf("| %-42s | %-21s |%n", e.getKey(), e.getValue());
+    }
   }
 
   /**

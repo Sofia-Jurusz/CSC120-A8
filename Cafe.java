@@ -12,13 +12,17 @@ public class Cafe extends Building implements CafeRequirements{
      * @param name Cafe's name
      * @param address Cafe's address
      * @param nFloors Number of floors in Cafe
+     * @param nCoffeeOunces
+     * @param nSugarPackets
+     * @param nCreams
+     * @param nCups
      */
-    public Cafe(String name, String address, int nFloors) {
+    public Cafe(String name, String address, int nFloors, int nCoffeeOunces, int nSugarPackets, int nCreams, int nCups) {
         super(name, address, nFloors);
-        this.nCoffeeOunces = 800;
-        this.nSugarPackets = 100;
-        this.nCreams = 100;
-        this.nCups = 100;
+        this.nCoffeeOunces = nCoffeeOunces;
+        this.nSugarPackets = nSugarPackets;
+        this.nCreams = nCreams;
+        this.nCups = nCups;
         System.out.println("You have built a cafe: ☕");
     }
 
@@ -35,7 +39,6 @@ public class Cafe extends Building implements CafeRequirements{
         this.nCups = 1000;
 
         System.out.println("You have built a cafe: ☕");
-
     }
 
     /**
@@ -130,11 +133,14 @@ public class Cafe extends Building implements CafeRequirements{
         if (floorNum < 1 || floorNum > this.nFloors) {
             throw new RuntimeException("Invalid floor number. Valid range for this Building is 1-" + this.nFloors +".");
         }
-        System.out.println("Whoaa there, hold up!! The upper levels are for employees only!!");
+        throw new RuntimeException("Whoaa there, hold up!! The upper levels are for employees only!!");
     }
 
+    /**
+     * Stops you from trying to go to the next floor
+     */
     public void goUp(){
-        System.out.println("Whoaa there, hold up!! The upper levels are for employees only!!");
+        throw new RuntimeException("Whoaa there, hold up!! The upper levels are for employees only!!");
     }
 
 
@@ -142,7 +148,7 @@ public class Cafe extends Building implements CafeRequirements{
     //main for testing
     public static void main(String[] args) {
         System.out.println();
-        Cafe woodstar= new Cafe("Woodstar", "60 Masonic St, Northampton, MA", 2);
+        Cafe woodstar= new Cafe("Woodstar", "60 Masonic St, Northampton, MA", 2,800,100,100,100);
         System.out.println(woodstar.toString());
         woodstar.showOptions();
         woodstar.enter();

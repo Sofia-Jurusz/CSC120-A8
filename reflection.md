@@ -12,4 +12,14 @@ In the cafe class, I added an overload method for black coffee drinkers. Now if 
 
 I found this assignment fun and I liked using my creativity. I tried making it possible to play the campus map and struggled. It was not as easy as I thought. The best dea I came up with, but didn't impliment, would be using something similar to what I did in the conversation homework. So a user types in what they want (a string) and then that corresponds to the a list of methods/ buildings that they want to use. (i.e. 'enter comstock') would correspond with the method enter and the building comstock. With this idea though, I think I'd need to initialize the buildings with each campus map. Could I have feedback on this idea, or is it too confusing typed out?
 
-
+First revision:
+updates from fixing A7;
+- originally the cafe class was writen incorrectly so I fixed that 
+- added curly brackets to the printCollection() method.
+Everything else:
+- fixed Java doc return statements so they only had one return value. 
+- I added the java doc for the moveIn() method in the house class and to the goUp() method in goUp() of the cafe class.
+- I added java docs for the student class
+- I completed the rubric
+- I decided not to change the goToFloor() method in the house class. The method does throw an exception and accounts for all scenarios. A question that came up was should someone be able to travel to the floor directly above or below them using an elevator. I think so because some people might be disabled. 
+- In the cafe class on goToFloor() and goUp(), I fixed it so it would throw an exception if someone tried to go to the next floor in the cafe. 
